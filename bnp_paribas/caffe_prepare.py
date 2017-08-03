@@ -30,6 +30,12 @@ test = pd.read_csv(
 all_data = pd.concat((train, test))
 max_categories = 100
 
+# feature v107 is a duplicate of v91
+del all_data['v107']
+# v71 and v75 can be combined
+all_data.loc[:, 'v71'] = all_data['v71'].apply(lambda x: x if x else 'other')
+
+
 # convert categorical columns into a series of binary dummy columns
 for column in all_data.columns:
     if str(all_data.dtypes[column]) == 'object':
