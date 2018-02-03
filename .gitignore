@@ -1,4 +1,10 @@
 */data/
 .DS_Store
 .idea/
+.python_version
+
 genia/
+
+inputs.csv
+output.csv
+
